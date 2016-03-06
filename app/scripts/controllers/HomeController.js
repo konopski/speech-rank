@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('speechRank').controller('HomeController', function( $scope, ConferenceService ) {
+        angular.module('speechRank').controller('HomeController', function( $scope, ConferenceService, $twitterOAuth ) {
         console.log('HomeController loaded..');
 
         $scope.getConferences = function() {

@@ -2,8 +2,12 @@
     'use strict';
 
     angular.module('speechRank', [
-        'ui.router'
+        'ui.router',
+        'twitter-oauth'
     ])
+//    angular.module('speechRank', [
+//        'ui.router'
+//    ])
     .config(config)
     .run(run)
 	.constant('REST_END_POINT','http://localhost:5050');
