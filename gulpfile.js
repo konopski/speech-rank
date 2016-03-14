@@ -38,7 +38,7 @@ var paths = {
 // minify and concatenate scripts in default script directory
 gulp.task('scripts', function() {
     gulp.src(paths.libs, {cwd: bases.application})
-        .pipe(uglify())
+//        .pipe(uglify())
         .pipe(concat('libs.min.js'))
         .pipe(gulp.dest(bases.production + 'scripts/'));
 
