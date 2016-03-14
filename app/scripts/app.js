@@ -3,16 +3,16 @@
 
     angular.module('speechRank', [
         'ui.router',
-        'twitter-oauth'
+        'twitter-oauth',
+        'ngAnimate',
+        'angular-loading-bar',
+        'toastr'
     ])
-//    angular.module('speechRank', [
-//        'ui.router'
-//    ])
     .config(config)
-    .run(run)
+    //.run(run)
 	.constant('REST_END_POINT','http://localhost:5050');
 
-    function config( $urlRouterProvider, $stateProvider, $sceDelegateProvider ) {
+    function config( $urlRouterProvider, $stateProvider, $sceDelegateProvider, cfpLoadingBarProvider ) {
         // redirection to home path
         $urlRouterProvider.when('', '/');
 
@@ -53,9 +53,18 @@
 		    'https://youtube.com/**',
 		    'http://youtube.com'
 	    ]);
+
+        // loading bar setup
+        cfpLoadingBarProvider = {
+            includeBar: true,
+            includeSpinner: true,
+            latencyThreshold: 1500
+        };
     }
 
+    /*
     function run() {
 
     }
+    */
 })();

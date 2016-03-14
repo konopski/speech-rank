@@ -15,13 +15,16 @@ var paths = {
     scripts: ['scripts/**/*.js', '!scripts/libs/**/*.js'],
     less: ['less/*.less'],
     libs: [
-        'scripts/libs/angular.min.js',          // AngularJS
+        'scripts/libs/angular.min.js',              // AngularJS
         'scripts/libs/jsOAuth-1.3.7.js',        // oauth
         'scripts/libs/ng-cordova-oauth.js',     // cordova
         'scripts/libs/twitter-oauth-lib.js',    // twitter oauth
-        'scripts/libs/angular-animate.min.js',  // ngAnimate
-        'scripts/libs/jquery-2.2.0.min.js',     // jQuery
-        'scripts/libs/angular-ui-router.min.js' // ngRoute
+        'scripts/libs/angular-animate.min.js',      // ngAnimate
+        'scripts/libs/jquery-2.2.0.min.js',         // jQuery
+        'scripts/libs/angular-ui-router.min.js',    // ngRoute
+        'scripts/libs/loading-bar.min.js',          // Loading animation
+        'scripts/libs/angular-toastr.min.js',       // angular messages
+        'scripts/libs/bootstrap.min.js'             // boostrap
         ],
     html: ['index.html'],
 	fonts: ['fonts/**/'],
@@ -35,7 +38,7 @@ var paths = {
 // minify and concatenate scripts in default script directory
 gulp.task('scripts', function() {
     gulp.src(paths.libs, {cwd: bases.application})
-//        .pipe(uglify())
+        .pipe(uglify())
         .pipe(concat('libs.min.js'))
         .pipe(gulp.dest(bases.production + 'scripts/'));
 

@@ -6,7 +6,7 @@
 # IDE ignore list
 
 /.idea
-
+.iml
 *.class
 speech-rank.iml
 
@@ -20,3 +20,6 @@ hs_err_pid*
 
 .gradle/
 
+
+# added by GitSavvy
+/build/
